@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test_E2E_Web {
 
@@ -21,8 +23,9 @@ public class Test_E2E_Web {
 		driver.get("https://shop.demoqa.com");
 
 		driver.navigate().to("https://shop.demoqa.com/?s=" + "dress" + "&post_type=product");
-
-	
+		/*
+		WebElement toCart = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'To Cart')]")));
+		
 		List<WebElement> items = driver.findElements(By.cssSelector(".noo-product-inner"));
 		items.get(0).click();
 		
@@ -84,7 +87,7 @@ public class Test_E2E_Web {
 		
 		WebElement placeOrder = driver.findElement(By.cssSelector("#place_order"));
 		placeOrder.submit();
-		
+		*/
 		driver.quit();
 
 	}
