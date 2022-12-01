@@ -52,7 +52,9 @@ public class Steps_ConsultaWeb {
 		System.out.println("Step obtengo los resultados");
 		System.out.println(tst.scenContext.getContext(Context.DATA_INFO_A));
 		String paragraph = google.search_andSplitParagraph((String) tst.scenContext.getContext(Context.DATA_INFO_B), (String) tst.scenContext.getContext(Context.DATA_INFO_A));
-		System.out.println("AÑO => " + google.return_ageInText(paragraph));
+		String msgResult = "El parrafo obtenido es \n \"" + paragraph + "\"\n y el año del acontecimiento es " + google.return_ageInText(paragraph);
+		System.out.println("AÑO => " + msgResult);
+		tst.scenContext.setContext(Context.MESSAGE, msgResult);
 	}
 	
 }
