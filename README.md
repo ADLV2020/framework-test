@@ -2,7 +2,7 @@
 
 FRAMEWORK TEST - INDITEX
 ===================
-Proyecto de Automatización PARA EJERCICIO PROPUESTO POR PARTE DE INDITEX
+Proyecto de Automatización PARA EJERCICIO PROPUESTO POR PARTE DE INDITEX  
 Basado en Cucumber con Java y JUnit, con capa de Cucumber 
 
 ## Resumen de la herramienta ##
