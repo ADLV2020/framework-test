@@ -11,10 +11,10 @@
 			<protocol>https</protocol>
 
 			<!-- title of the document -->
-			<documentTitle>ICBC Automation Test Framework</documentTitle>
+			<documentTitle>INDITEX Automation Test Framework</documentTitle>
 
 			<!-- report name - displayed at top-nav -->
-			<reportName>ICBC Test Report</reportName>
+			<reportName>INDITEX - Test Report</reportName>
 
 			<!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
 			<dateFormat>yyyy-MM-dd</dateFormat>

@@ -17,7 +17,7 @@ import managers.FileReaderMng;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features="./src/test/resources/",
-				tags={"@ScenURL2"},
+				tags={"@BuscarSimple"},
 		glue={"stepsDefinition"},
 		plugin={"pretty","com.cucumber.listener.ExtentCucumberFormatter:",
 				"json:target/reportesCucumber/reporteJSON/rptJSON.json",

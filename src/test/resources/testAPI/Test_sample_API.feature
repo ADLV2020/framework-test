@@ -15,16 +15,6 @@ Feature: Prueba de API
     |"https://bookstore.toolsqa.com"  |"/Account/v1/GenerateToken" |"TOOLSQA-Test"|"Test@@123" |"parameters" 	|"Content-Type" |"application/json" |302		|
 
 
-
-
-
-
-
-
-
-
-
-
   @api @apiAutorizacion
   Scenario Outline: Se realiza una consulta a una API sin certificado
 		Given accedo a la url <url> de autorizacion
@@ -34,12 +24,6 @@ Feature: Prueba de API
     Examples: 
     |url 	 										|api 											 	|usuario				|clave			 |codigo |
     |"https://demoqa.com"  		|"/Account/v1/Authorized" 	|"TOOLSQA-Test"	|"Test@@123" |200		|
-
-
-
-
-
-
 
 
   @api
