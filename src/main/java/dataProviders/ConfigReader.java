@@ -51,6 +51,11 @@ public class ConfigReader {
 		if(url!=null) return url;
 		else throw new RuntimeException(message+"_URL__");}
 	
+	public String getURLGoogle() {
+		String url=property.getProperty("URL_GOOGLE");
+		if(url!=null) return url;
+		else throw new RuntimeException(message+"_URL__");}
+	
 	public Boolean getBrowserSize() {
 		String tamaño=property.getProperty("maxWin");
 		if(tamaño!=null) return Boolean.valueOf(tamaño);
