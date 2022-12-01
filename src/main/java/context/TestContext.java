@@ -8,7 +8,7 @@ public class TestContext {
 	// SET MANAGERS
 	private BrowsersMng webDrvMng;
 	private StartPagesMng pageObjMng;
-	private ScenContext scenContext;
+	public ScenContext scenContext;
 	
 	// CONTEXT
 	public TestContext() {
