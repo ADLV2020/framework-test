@@ -1,9 +1,9 @@
 
 
-ICBC FRAMEWORK
+FRAMEWORK TEST - INDITEX
 ===================
-Proyecto de Automatización Framework ICBC
-Basado en Cucumber con Java y JUnit
+Proyecto de Automatización PARA EJERCICIO PROPUESTO POR PARTE DE INDITEX
+Basado en Cucumber con Java y JUnit, con capa de Cucumber 
 
 ## Resumen de la herramienta ##
 * Estructura para automatizaciones de pruebas en Cucumber
