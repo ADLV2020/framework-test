@@ -1,11 +1,9 @@
 package stepsDefinition;
 
 import context.TestContext;
-import pageObjects.Page_sample_Scenario;
 import pageObjects.Page_Google;
 import pageObjects.Page_Wikipedia;
 
-import org.junit.Assert;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
