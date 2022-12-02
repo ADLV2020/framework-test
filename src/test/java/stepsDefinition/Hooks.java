@@ -50,7 +50,7 @@ public class Hooks {
 		String file=dateNow.replace("/","").replace(":","").replace(" ","_")+"_";
 		try {
 			File sourcePath=((TakesScreenshot)tstContext.getWebDrvMng().getDrv()).getScreenshotAs(OutputType.FILE);
-			File destinationPath=new File(System.getProperty("user.dir")+"/target/reportesCucumber/reporteExtent/ScreenShot/"+file+screenShot+".png");
+			File destinationPath=new File(System.getProperty("user.dir")+"/target/reportesCucumber/reporteExtent/"+file+screenShot+".png");
 			Files.copy(sourcePath,destinationPath);   
 			Reporter.addScreenCaptureFromPath(destinationPath.toString());
 			Reporter.addStepLog((String) tstContext.scenContext.getContext(Context.MESSAGE));

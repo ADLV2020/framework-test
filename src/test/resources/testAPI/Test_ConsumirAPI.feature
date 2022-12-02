@@ -4,7 +4,7 @@ Feature: Consumir servicios de PetStore
   I want consumir los diferentes endpoint disponibles
   So realizar altas y gestionar consultas 
 	
-  @API @AltaUser @All
+  @API @User @AltaUser @All
   Scenario Outline: Realizar el alta de un nuevo usuario en PetStore
 		Given tengo a la <URL> del servicio
 		And tengo el <ENDPOINT> de la api
@@ -15,7 +15,7 @@ Feature: Consumir servicios de PetStore
     |"https://petstore.swagger.io/v2"		|"/user"								|"Anibal-DeLaVega"	|"Anibal"			 |"De La Vega" 	|"hannibal.delavega@gmail.com" 	|"Lito1234"	 	|"5491164235548"	|200	 		|
     
     
-  @API @ConsultaUser @All
+  @API @User @ConsultaUser @All
   Scenario Outline: Realizar la consulta por un usuario dado de alta en PetStore
 		Given tengo a la <URL> del servicio
 		And tengo el <ENDPOINT> de la api
