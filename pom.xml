@@ -80,7 +80,13 @@
 	    	<!-- <version>4.3.3</version> -->
 	    	<version>4.3.1</version>
 	    </dependency>
-
+		
+		<dependency>
+    		<groupId>com.mopano</groupId>
+    		<artifactId>hibernate-json-org-contributor</artifactId>
+    		<version>1.0</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
