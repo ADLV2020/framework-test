@@ -89,92 +89,36 @@ public class Test_Consumir_API {
 		//String jsonTypeGetPet = JsonPath.from(jsonDatosGetPet).get("name");
 		//System.out.println(jsonTypeGetPet);
 		
+		System.out.println("STEP: Formateando el json de respuesta para buscar ID y NAME.");
 		JSONArray jsonarray = new JSONArray(jsonDatosGetPet);
+		Object arrPets[][] = new Object[jsonarray.length()][2];
 		for ( int o = 0; o < jsonarray.length(); o++) {
 			JSONObject obj = jsonarray.getJSONObject(o);
-			String name = obj.getString("name");
-			System.out.println(name);
-		}
-		
-		String arr[] = new String[jsonarray.length()];
-		for ( int o = 0; o < jsonarray.length(); o++) {
-			JSONObject obj = jsonarray.getJSONObject(o);
-			String name = obj.getString("name");
-			if ( name != null ) {
-				arr[o] = name;
+			if ( obj.getString("name") != null ) {
+				arrPets[o][0] = obj.getInt("id");
+				arrPets[o][1] = obj.getString("name");
 			}
 		}
-		System.out.println("<<<<< RECORRO ARRAYLIST >>>>>");
-		for ( int u=0;u<arr.length; u++) {
-			System.out.println(arr[u]);
+		for ( int x = 0; x < arrPets.length; x++) {
+			System.out.println("Posicion " + x + " valor 0 " + arrPets[x][0] + " y valor 1 " + arrPets[x][1]);
 		}
 		
-		for ( int o = 0; o < jsonarray.length(); o++) {
-			int vez = 0;
-			JSONObject obj_o = jsonarray.getJSONObject(o);
-			String name1 = obj_o.getString("name");
-			for ( int z = 0; z < jsonarray.length(); z++) {
-				JSONObject obj_z = jsonarray.getJSONObject(z);
-				if ( obj_o != null && obj_o.equals(obj_z) ) {
-					vez = vez+1;
-					String name2 = obj_z.getString("name");
-					System.out.println(" | nombre 1 " + name1 + " contador o " + o + " | nombre 2 " + name2 + " contador z " + z + " | vez " + vez + " | ");
+		String msg = "";
+		String arr[] = new String[arrPets.length];
+		for ( int w = 0; w<arrPets.length; w++) {
+			System.out.println("w="+w);
+			int a = 0;
+			for ( int z = 0; z<arrPets.length; z++) {
+				System.out.println("z="+z);
+				if ( arrPets[w][1].equals(arrPets[z][1]) && ! Arrays.asList(arr).contains(arrPets[w][1])) {
+					System.out.println(arrPets[w][1] +" | "+arrPets[z][1]);
+					a++;
 				}
 			}
+			arr[w] = (String) arrPets[w][1];
+			msg = msg + "\n la mascota " + arrPets[w][1] + " aparece " + a + " veces";
 		}
-		
-		System.out.println("\n<<<<< RECORRO ARRAYLIST >>>>>");
-		for ( int o = 0; o < arr.length; o++) {
-			for ( int z = 0; z < arr.length; z++) {
-				if ( arr[o] != null && arr[o].equals(arr[z]) ) {
-					System.out.println(" | nombre 1 " + arr[o] + " contador o " + o + " | nombre 2 " + arr[z] + " contador z " + z + " | vez | ");
-				}
-			}
-		}
-		
-		
-		
-		/*
-		System.out.println(respuesta_user.getStatusCode());
-		Assert.assertEquals(respuesta_user.getStatusCode(),200);
-		
-		System.out.println("\n Solicitud POST para TokenGenerator y obtiene Token \n");
-		Response respuesta = solicitud.body(datos_1).post(path_Token);
-		
-		System.out.println(respuesta.getStatusCode());
-		Assert.assertEquals(respuesta.getStatusCode(),200);
-		
-		String jsonDatos = respuesta.asString();
-		System.out.println(jsonDatos.toString()+"\n token: "+JsonPath.from(jsonDatos).get("token"));
-		Assert.assertTrue(jsonDatos.contains("token"));
-		String token  = JsonPath.from(jsonDatos).get("token");
-		System.out.println(token);
-
-		
-		System.out.println("\n Solicitud GET para consulta \n"); 
-		respuesta = solicitud.get(path_Book);
-		System.out.println(respuesta.getStatusCode());
-		Assert.assertEquals(respuesta.getStatusCode(), 200);
-		
-        jsonDatos = respuesta.asString();
-        System.out.println(jsonDatos);
-        List<Map<String, String>> libros = JsonPath.from(jsonDatos).get("books");
-        System.out.println(libros.size());
-        Assert.assertTrue(libros.size() > 0);
- 
-        String librosId = libros.get(0).get("isbn");
-        System.out.println(librosId);
-
-        System.out.println("\n Agrega un registro con autorizacion \n");
-        String userId = "9b5f49ab-eea9-45f4-9d66-bcf56a531b85";
-        String Datos_2 = "{ \"userId\": \""+userId+"\", \"collectionOfIsbns\": [ { \"isbn\": \""+librosId+"\" } ]}";
-        
-        solicitud.header("Authorization", "Bearer " + token).header("Content-Type", "application/json");
-        respuesta = solicitud.body(Datos_2).post(path_Book);
-        
-        System.out.println(respuesta.getStatusCode()+"\n "+respuesta.getStatusLine()+"\n "+respuesta.getContentType()+"\n "+respuesta.getBody());
-		*/
-		
+		System.out.println(msg);
 	}
-
+	
 }
