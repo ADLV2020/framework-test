@@ -5,7 +5,7 @@ Feature: Realizar búsquedas de contenido y analizar el texto.
   I want buscar un articulo según unas palabaras claves
   So That analizar el texto en busqueda de datos
 
-  @BuscarSimple
+  @BuscarSimple @All
   Scenario: Dado una palabra a buscar, analizar el texto para obtener una fecha
     Given accedo al buscador de Google
     And busco por la palabra "automatizacion" en Google

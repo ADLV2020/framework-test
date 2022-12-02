@@ -100,7 +100,7 @@ public class Test_Consumir_API {
 			}
 		}
 		for ( int x = 0; x < arrPets.length; x++) {
-			System.out.println("Posicion " + x + " valor 0 " + arrPets[x][0] + " y valor 1 " + arrPets[x][1]);
+			System.out.println("| Posición " + x + " | ID " + arrPets[x][0] + " | Nombre " + arrPets[x][1] + " |");
 		}
 		
 		String msg = "";
